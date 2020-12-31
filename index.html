@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+<link rel="stylesheet" type="text/css" href="styles/main.css">
+</head>
+<br>
+<br>
+<br>
+<br>
+
+<body id="body" class="main-color">
+	<!-- Voice Transcript -->
+	<div id="voice-transcript" onclick="closeVoiceTranscript(); inputFocus()">
+		<div>
+			<p id="voice-transcript-text"></p>
+		</div>
+	</div>
+	<!-- Search Form -->
+	<form id="search-form" method="GET" action="https://www.google.com/search?q=" accept-charset="UTF-8" role="search">
+
+		<div id="search-img"></div>
+
+		<input id="search-input" type="text" name="q" value="" placeholder="" onkeypress="checkValue()"
+			onkeyup="checkValue()" onchange="checkValue()" maxlength="100" autocomplete="on" autofocus required>
+
+		<input id="reset-button" type="reset" value="Reset" onclick="resetForm()" aria-label="Clear search field"
+			title="Reset">
+
+		<input id="search-button" type="submit" value="Search" onclick="this.form.target='_blank';" aria-label="Search"
+			title="Search">
+
+		<input id="helper" type="hidden" name="" value="">
+
+		<div id="voice-container">
+			<span id="voice-animation"></span>
+			<button id="voice-button" onclick="reco.toggleStartStop(); openVoiceTranscript()"
+				aria-label="Voice search">Voice</button>
+		</div>
+
+	</form>
+
+	</div>
+
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script src="scripts/parameters.js"></script>
+	<script src="scripts/functions.js"></script>
+	<script src="scripts/autocomplete.js"></script>
+	<script src="scripts/speech.js"></script>
+
+</body>
+
+</html>
